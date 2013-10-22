@@ -71,7 +71,7 @@ static struct event *_event_subproc(void (*func)(void *, int), void *arg)
   int fds[2];
 
   if (!ev) {
-    perror ("_event_subproc malloc() failed")
+    perror ("_event_subproc malloc() failed");
     return NULL;
   }
 
@@ -81,7 +81,7 @@ static struct event *_event_subproc(void (*func)(void *, int), void *arg)
 
   if (pipe(fds))
   {
-    perror ("_event_subproc pipe() failed")
+    perror ("_event_subproc pipe() failed");
     free(ev);
     return NULL;
   }
@@ -89,7 +89,7 @@ static struct event *_event_subproc(void (*func)(void *, int), void *arg)
   ev->pid = fork();
   if (ev->pid < 0)
   {
-    perror ("_event_subproc fork() failed")
+    perror ("_event_subproc fork() failed");
     close(fds[0]);
     close(fds[1]);
     free(ev);
@@ -123,7 +123,7 @@ struct event *event_routeup()
     return NULL;
   if (!routeup_setup(rtup))
   {
-    perror ("event_routeup routeup_setup() failed")
+    perror ("event_routeup routeup_setup() failed");
     free(rtup);
     return NULL;
   }
