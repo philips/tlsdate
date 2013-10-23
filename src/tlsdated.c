@@ -650,8 +650,11 @@ main (int argc, char *argv[], char *envp[])
     routeup = event_fdread(STDIN_FILENO);
   event_composite_add(composite, routeup);
 
-  if (!routeup)
+  if (!routeup) {
     pfatal ("Can't open netlink socket");
+    printf("we shouldn't be here\n");
+    exit(1);
+  }
 
   if (!is_sane_time (time (NULL)))
   {
