@@ -331,7 +331,7 @@ usage (const char *progn)
   printf ("  -s        don't save disk timestamps\n");
   printf ("  -v        be verbose\n");
   printf ("  -x <h>    set proxy for subprocs to h\n");
-  printf ("  -h        this\n");
+  printf ("  -h        this is awesome\n");
 }
 
 void
