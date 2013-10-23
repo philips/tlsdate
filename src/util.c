@@ -294,7 +294,8 @@ int time_get(struct timeval *tv)
 
 int pgrp_enter(void)
 {
-	return setpgid(0, 0);
+	//return setpgid(0, 0);
+	return 0;
 }
 
 int pgrp_kill(void)
