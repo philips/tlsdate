@@ -44,18 +44,18 @@ routeup_setup (struct routeup *rtc)
   rtc->netlinkfd = socket (AF_NETLINK, SOCK_RAW, NETLINK_ROUTE);
   if (rtc->netlinkfd < 0)
     {
-      perror ("netlink socket() failed");
+      printf ("netlink socket() failed\n");
       return 1;
     }
   if (bind (rtc->netlinkfd, (struct sockaddr *) &sa, sizeof (sa)) < 0)
     {
-      perror ("netlink bind() failed");
+      printf ("netlink bind() failed\n");
       close (rtc->netlinkfd);
       return 1;
     }
   if (fcntl (rtc->netlinkfd, F_SETFL, O_NONBLOCK) < 0)
     {
-      perror ("netlink fcntl(O_NONBLOCK) failed");
+      printf ("netlink fcntl(O_NONBLOCK) failed\n");
       close (rtc->netlinkfd);
       return 1;
     }
