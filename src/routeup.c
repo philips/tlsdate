@@ -42,7 +42,7 @@ routeup_setup (struct routeup *rtc)
   sa.nl_groups = RTMGRP_IPV4_ROUTE | RTMGRP_IPV6_ROUTE;
 
   rtc->netlinkfd = socket (AF_NETLINK, SOCK_RAW, NETLINK_ROUTE);
-  printf ("routeup_setup entered \n")
+  printf ("routeup_setup entered \n");
   if (rtc->netlinkfd < 0)
     {
       printf ("netlink socket() failed\n");
